@@ -28,7 +28,7 @@ public class FetchUserDataReaderConfig implements ItemReader<UserDTO> {
 
     public static Logger LOGGER = LoggerFactory.getLogger(FetchUserDataReaderConfig.class);
 
-    private static final String BASE_URL = "http://localhost:8081";
+    private static final String BASE_URL = "http://localhost:8888";
 
     private final RestTemplate restTemplate = new RestTemplate();
 
@@ -56,7 +56,7 @@ public class FetchUserDataReaderConfig implements ItemReader<UserDTO> {
     }
 
     private List<UserDTO> fetchUserDataFromAPI() {
-        String url = BASE_URL + "/clients/pagedData?page=%d&size=%d";
+        String url = BASE_URL + "/clients?page=%d&size=%d";
 
         LOGGER.info("[READER STEP] Fetching data...");
         LOGGER.info("[READER STEP] Request uri " + String.format(url,getPage(),pageSize));
