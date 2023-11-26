@@ -1,2 +1,20 @@
+#spring.datasource.jdbcUrl=jdbc:mysql://localhost:3308/spring_batch # this jdbcUrl does not work the correct is url
+#spring.datasource.username=root
+#spring.datasource.password=root
+#spring.mvc.pathmatch.matching-strategy=ant-path-matcher
+#spring.batch.jdbc.initialize-schema=always
+#spring.jpa.database-platform=org.hibernate.dialect.PostgreSQLDialect
+#spring.jpa.properties.hibernate.jdbc.lob.non_contextual_creation=true
+#spring.jpa.hibernate.ddl-auto=none
+
 chunkSize: 10
 pageSize: 10
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3308/spring_batch
+    username: root
+    password: root
+  batch:
+    jdbc:
+      initialize-schema: always
