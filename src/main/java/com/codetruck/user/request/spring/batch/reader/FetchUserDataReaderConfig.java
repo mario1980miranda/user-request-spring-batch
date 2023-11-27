@@ -69,7 +69,7 @@ public class FetchUserDataReaderConfig implements ItemReader<UserDTO> {
                 ),
                 HttpMethod.GET,
                 null,
-                new ParameterizedTypeReference<ResponseUser>() {
+                new ParameterizedTypeReference<>() {
                 });
 
         return Objects.requireNonNull(response.getBody()).getContent();

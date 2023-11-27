@@ -1,6 +1,5 @@
 package com.codetruck.user.request.spring.batch.writer;
 
-import com.codetruck.user.request.spring.batch.dto.UserDTO;
 import com.codetruck.user.request.spring.batch.entities.UserRequest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

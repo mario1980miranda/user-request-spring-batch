@@ -18,20 +18,17 @@ public class SelectFieldsUserDataProcessorConfig {
 
     @Bean
     public ItemProcessor<UserDTO, UserRequest> selectFieldsUserDataProcessor() {
-        return new ItemProcessor<UserDTO, UserRequest>() {
-            @Override
-            public UserRequest process(@NonNull UserDTO item) throws Exception {
+        return item -> {
 
-                UserRequest user = new UserRequest();
-                user.setName(item.getName());
-                user.setLogin(item.getLogin());
-                user.setAvatarUrl(item.getAvatarUrl());
+            UserRequest user = new UserRequest();
+            user.setName(item.getName());
+            user.setLogin(item.getLogin());
+            user.setAvatarUrl(item.getAvatarUrl());
 
-                LOGGER.info("[PROCESSOR STEP] select user field " + counter + " - " + item);
-                counter++;
+            LOGGER.info("[PROCESSOR STEP] select user field " + counter + " - " + item);
+            counter++;
 
-                return user;
-            }
+            return user;
         };
     }
 }
